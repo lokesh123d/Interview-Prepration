@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="input">
+</body>
+<script>
+    const input = document.querySelector('input');
+    input.addEventListener('input',debounce(function(e){
+        console.log(e.target.value);
+        // console.log('hey');
+    },1000));
+
+    function debounce(func,delay){
+        let timerId ;
+        return function (args){
+            // console.log(args);
+            clearTimeout(timerId);
+            timerId = setTimeout(function(){
+           func(args);
+            },delay)
+        }
+    }
+</script>
+</html>
