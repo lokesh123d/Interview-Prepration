@@ -1,0 +1,30 @@
+.folder{
+    background-color:rgba(128, 128, 128, 0.192);
+    width: 310px;
+    margin: 7px;
+    padding: 5px 20px ;
+    border-radius: 6px;
+    display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 20px;
+cursor: pointer;
+}
+.files{
+    /* padding: 10px; */
+    margin: 7px;
+    position: relative;
+    /* left: 40px; */
+    border-radius: 10px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+.fileCollection{
+    display: flex;
+}
+
+.new{
+    display: flex;
+    gap: 10px
+    ;
+}
