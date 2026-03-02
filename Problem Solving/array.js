@@ -1,3 +1,6 @@
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let arr2 = [2, 3, 3, 4, 5, 68, 9, 2, 4, 8, 5];
+let ducharr = [1, 2, , 0, 0, 0, 2, 2, 1, 2];
 // // // Move array to the end...
 // // const array = [1,0,1,3,40,4,40,0,4,67,0];
 // // let newArray = array.filter(val => val !== 0);
@@ -8,8 +11,6 @@
 // // newArray.push(0);
 // // }
 // // console.log(newArray);
-
-
 
 // const array =[2,3,4,5,7,8,73,2];
 
@@ -33,23 +34,19 @@
 
 // // console.log(count);
 
-
-
 // var findMedianSortedArrays = function(nums1, nums2) {
 //     let ans = (+nums1.toString()+","+(nums2.toString()).split(','))
 //     // let a = ans.split(',');
 //     console.log(ans);
-    
+
 // };
 
 // findMedianSortedArrays([1,2,3],[4,45,6]);
 
-
-
 // function rotateArraybyN(arr,n){
 //     newarr = [];
 // for(let i = 0;i<arr.length;i++){
-//     (newarr[Math.round((i+n)%arr.length)]= arr[i]);       
+//     (newarr[Math.round((i+n)%arr.length)]= arr[i]);
 // }
 // console.log(newarr);
 // }
@@ -57,4 +54,183 @@
 // rotateArraybyN([1,8,2,3,4,5,6],1);
 
 // [ 5, 6, 1, 8,2, 3, 4]
-// [1,1,2,3,4,5,6] 
+// [1,1,2,3,4,5,6]
+
+// find the missing number in n
+
+// let arr = [1,2,3,4,5,6,7,8,9];
+// let n = 9;
+// let newarr = arr.sort(a,b=>a-b)
+// let first = 1;
+
+// newarr.map((val)=>{
+
+// })
+
+// let arr = [1,2,3,4,5,6,7,8,9];
+// let k = 3
+// let newarr = [];
+// for(let i =0;i<arr.length;i++){
+//  newarr[Math.floor((i+k)%arr.length)] = arr[i];
+// }
+// console.log(newarr)
+
+// count vowel and constnent
+// let str = 'lokesh dangwal';
+// let arr = str.split('').filter(ch => ch !== ' ');
+// let newarr = arr.filter((val)=>{
+//     return 'aeiou'.includes(val);
+// })
+// let consonent = str.length-newarr.length;
+// console.log('consonent is '+ consonent +' and vowel is '+ newarr.length);
+// console.log(newarr);
+// console.log(arr);
+
+// Find subarray with given sum
+// let  arr2= [15, 2, 4, 8, 9, 5, 10, 23];
+// let target = 24;
+// let ans = [2, 5]
+
+// function subArray(){
+//     for(let i =0;i<arr2.length;i++){
+//         let subarray = [];
+//         subarray.push(arr2[i]);
+//         for(let j =i+1;j<arr2.length;j++){
+//             if(arr2[i]+arr2[j] <target){
+//                 subarray.push(arr2[j]);
+//             }else if(arr2[i]+arr2[j]==target){
+// subarray.push(arr2[j]);
+// return subarray;
+//             }
+//         }
+//     }
+// }
+
+// console.log(subArray());
+
+// create a subarry wihtout any repeat
+
+// let str = 'lokeeshdangwal';
+// let arr = str.split('').filter((val)=> val.trim('')!='');
+// let collection =[];
+// for(let i =0;i<arr.length;i++){
+//     let subarray = [];
+// for(let j=i;j<arr.length;j++){
+//     if(!subarray.includes(arr[j])){
+//         subarray.push(arr[j]);
+//     }else{
+
+//         break;
+//     }
+// }
+// collection.push(subarray);
+// }
+// let max = 0;
+// let indx = 0;
+
+// for(let i =0;i<collection.length;i++){
+//     if(max<collection[i].length){
+//         max= collection[i].length;
+//         indx = i;
+//     }
+// }
+
+// console.log(collection[indx]);
+
+// console.log(subarray);
+
+// find all pairs with the givern sum
+let target = 10;
+let ansarr = [];
+function findPairs(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] == target) {
+        let pair = [arr[i], arr[j]];
+        ansarr.push(pair);
+      }
+    }
+  }
+}
+// findPairs(arr,target)
+// console.log(ansarr)
+
+function findPairs(arr, target) {
+  let seen = new Set();
+  let result = [];
+
+  for (let num of arr) {
+    let complement = target - num;
+
+    if (seen.has(complement)) {
+      result.push([complement, num]);
+    }
+
+    seen.add(num);
+  }
+
+  return result;
+}
+
+// console.log(findPairs(arr, target));
+
+function insersionArray(arr, arr2) {
+  let set1 = new Set(arr);
+  let set2 = new Set(arr2);
+  let ans = [];
+  for (const val of set1) {
+    if (set2.has(val)) {
+      ans.push(val);
+    }
+  }
+  console.log(ans);
+}
+// insersionArray(arr, arr2);
+
+// union of an two array
+
+function unionOfArray(arr, arr2) {
+  return [...new Set([...arr, ...arr2])];
+}
+// console.log(unionOfArray(arr,arr2));
+
+// - Sort 0s,1s,2s (Dutch flag problem)
+
+function sortduch(ducharr) {
+  // let newans =[];
+  for (let i = 0; i < ducharr.length; i++) {
+    for (let j = 0; j < ducharr.length; j++) {
+      if (ducharr[i] > ducharr[j]) {
+        ducharr[i] = ducharr[i] + ducharr[j];
+        ducharr[j] = ducharr[i] - ducharr[j];
+        ducharr[i] = ducharr[i] - ducharr[j];
+      }
+    }
+  }
+  console.log(ducharr);
+}
+
+// sortduch(ducharr);
+
+// - Longest consecutive sequence
+
+function longestSequence(arr) {
+    let newans = [];
+  let newArr = [...new Set(arr)].sort((a, b) => a - b);  
+  let longest = 0;
+  for (let i = 0; i < newArr.length; i++) {
+    let prev = newArr[i];
+    for (let j = i + 1; j < newArr.length; j++) {
+      if (prev + 1 == newArr[j]) {
+        longest++;
+      } else {
+        prev = newArr[j + 1];
+        newans.push(longest);        
+        longest = 0;
+      }
+    }
+  }
+  console.log(newans);
+}
+
+longestSequence(arr);
