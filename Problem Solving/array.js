@@ -215,8 +215,8 @@ function sortduch(ducharr) {
 // - Longest consecutive sequence
 
 function longestSequence(arr) {
-    let newans = [];
-  let newArr = [...new Set(arr)].sort((a, b) => a - b);  
+  let newans = [];
+  let newArr = [...new Set(arr)].sort((a, b) => a - b);
   let longest = 0;
   for (let i = 0; i < newArr.length; i++) {
     let prev = newArr[i];
@@ -225,7 +225,7 @@ function longestSequence(arr) {
         longest++;
       } else {
         prev = newArr[j + 1];
-        newans.push(longest);        
+        newans.push(longest);
         longest = 0;
       }
     }
@@ -233,4 +233,101 @@ function longestSequence(arr) {
   console.log(newans);
 }
 
-longestSequence(arr);
+// longestSequence(arr);
+
+function longestSubString(str) {
+  const arr = str.split("");
+  let longest = 1;
+  let set = new Set();
+  let start = arr[0];
+  let minLongest = 1;
+  for (let i = 0; i < arr.length; i++) {
+    if (set.has(arr[i])) {
+      let set = new Set();
+      minLongest = 1;
+    } else {
+      minLongest++;
+      set.push(arr[i]);
+      if (minLongest > longest) {
+        longest = minLongest;
+      }
+    }
+  }
+}
+
+// longestSubString('lokeshdangwal');
+
+function reversedArray(arr) {
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    [arr[i], arr[arr.length - i - 1]] = [arr[arr.length - i - 1], arr[i]];
+  }
+  console.log(arr);
+}
+// reversedArray([1,2,3,4,5,6,7]);
+
+// find min and max form the array
+
+function findMaxAndMin(arr) {
+  let max = arr[0];
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (min > arr[i]) {
+      min = arr[i];
+    }
+    if (max < arr[i]) {
+      max = arr[i];
+    }
+  }
+  return (min, max);
+}
+
+// console.log(findMaxAndMin([1,2,3,4,5,6,7,7,5,4,32,2,2,4,5,6,7,76,5,3,2,2,4,56,6,7,7]));
+
+// findMaxAndMin([1,2,35,5,6,2,4,6,6,,4,234,657,24])
+
+function findMissing(arr, n) {
+  let expect = (n * (n + 1)) / 2;
+  let actualSum = 0;
+  for (let i = 0; i < n - 1; i++) {
+    actualSum += arr[i];
+  }
+  return expect - actualSum;
+}
+
+// console.log(findMissing([1,3,2,5],5));
+
+// merge two sorted array
+
+
+  function mergeSorted(arr, arr2) {
+  let ans = [];
+  let n = arr.length;
+  let m = arr2.length;
+  let k = 0;
+  let j = 0;
+
+  while (k < n && j < m) {
+    if (arr[k] <= arr2[j]) {
+      ans.push(arr[k]);
+      k++;
+    } else {
+      ans.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (k < n) {
+    ans.push(arr[k]);
+    k++;
+  }
+
+  while (j < m) {
+    ans.push(arr2[j]);
+    j++;
+  }
+
+  return ans;
+}
+
+
+console.log(mergeSorted([1, 9, 4, 7], [4, 5, 6, 7, 8, 9]));
