@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let arr2 = [2, 3, 3, 4, 5, 68, 9, 2, 4, 8, 5];
 let ducharr = [1, 2, , 0, 0, 0, 2, 2, 1, 2];
@@ -330,4 +332,61 @@ function findMissing(arr, n) {
 }
 
 
-console.log(mergeSorted([1, 9, 4, 7], [4, 5, 6, 7, 8, 9]));
+// console.log(mergeSorted([1, 9, 4, 7], [4, 5, 6, 7, 8, 9]));
+
+
+// function anagram(s,t){
+//   let arr = s.split('');
+//   let arr2 = t.split('');
+//   for(let i=0;i<arr.length;i++){
+//     for(let j=0;j<arr.length;j++){
+//       if(arr[i])
+//     }
+//   }
+// }
+
+
+
+
+const anagram =(s,t)=>{
+if(s.length!=t.length) return false 
+
+let obj1 ={};
+let obj2 ={};
+
+for(let i =0;i<s.length;i++){
+  obj1[s[i]] = (obj1[s[i]] ||0)+1;
+  obj2[t[i]] = (obj2[t[i]]||0)+1; 
+}
+
+for(let key in obj1){
+  if (obj1[key] != obj2[key] )return false;
+}
+return true
+
+
+
+}
+// console.log(anagram('anagram','nagaram'));
+
+
+
+const twoSumTarget=(nums,target)=>{
+
+  let set = new Set(nums);
+for(let i =0;i<nums.length;i++){
+  let expect = target-nums[i];
+  if(expect==nums[i]) continue; 
+  if(set.has(expect)) return [i,nums.indexOf(expect)];
+}
+}
+// console.log(twoSumTarget([3,2,4],6))
+
+const user ={
+  name:"lokesh",
+  logname(){
+    console.log(this.name);
+  }
+}
+
+setTimeout(user.logname.call(user),1000)
