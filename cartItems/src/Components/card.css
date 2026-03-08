@@ -1,0 +1,49 @@
+.card{
+    max-width: 300px;
+    overflow: hidden;
+    height: 500px;
+    object-fit: cover;
+}
+.card img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.card button{
+    margin: 0px 20px;
+    padding: 10px;
+    background-color: rgb(82, 82, 236);
+    color: white;
+    border: none;
+    border-radius: 9px;
+}
+.card img:hover{
+    transform: scale(1.02);
+    transition: all 1s ease-out;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+    ;
+    width: 90vw;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+}
+.cartCard{
+    background-color: azure;
+    width: 200px;
+    padding: 10px;
+
+}
+.cartContainer{
+    display: flex;
+    gap: 10px
+    ;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
