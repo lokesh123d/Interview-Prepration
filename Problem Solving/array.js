@@ -371,22 +371,92 @@ return true
 
 
 
-const twoSumTarget=(nums,target)=>{
+// const twoSumTarget=(nums,target)=>{
 
-  let set = new Set(nums);
-for(let i =0;i<nums.length;i++){
-  let expect = target-nums[i];
-  if(expect==nums[i]) continue; 
-  if(set.has(expect)) return [i,nums.indexOf(expect)];
-}
-}
-// console.log(twoSumTarget([3,2,4],6))
+//   let set = new Set(nums);
+// for(let i =0;i<nums.length;i++){
+//   let expect = target-nums[i];
+//   if(expect==nums[i]) continue; 
+//   if(set.has(expect)) return [i,nums.indexOf(expect)];
+// }
+// }
+// // console.log(twoSumTarget([3,2,4],6))
 
-const user ={
-  name:"lokesh",
-  logname(){
-    console.log(this.name);
+// const user ={
+//   name:"lokesh",
+//   logname(){
+//     console.log(this.name);
+//   }
+// }
+
+// setTimeout(user.logname.call(user),1000)
+
+
+
+
+// flatten array 
+
+let flattenArray = [1,2,[3,6,4,[34,35,23,64]],45,[345,73]]
+// let newarr = [];
+
+// let ansFlattenArray = flattenArray.map((val)=>{
+//   if(Array.isArray(val)){
+   
+//   for(let i =0;i<val.length;i++){
+//      newarr.push(val[i]);
+//   }
+//   }
+//   else{
+//     newarr.push(val);
+//   }
+// })
+// console.log(newarr);
+
+// console.log(ansFlattenArray);
+
+
+
+// custome flatten array 
+
+function customeFlattenArray(arr,defth=1){
+  let result =[];
+  arr.forEach(val => {
+    if(Array.isArray(val) && defth>0){
+return result.push(...customeFlattenArray(val,defth-1));
+    }else{
+      result.push(val);
+    }
+  });
+  return result
+}
+
+// console.log(customeFlattenArray(flattenArray,2))
+
+
+function foo(){
+  for(var i=0;i<3;i++ ){
+    setTimeout(function(){
+      console.log(i);
+    },i*1000);
+  }
+}
+// foo()
+
+
+const obj ={
+  name:'lokesh',
+  sayHello:function(thing){
+console.log(this.name+'is the ' +  thing);
   }
 }
 
-setTimeout(user.logname.call(user),1000)
+const obj2 = {
+  name:'dangwal Lokesh'
+}
+
+
+// const result = obj.sayHello.bind(obj2)
+// result('good man')
+
+
+

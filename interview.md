@@ -22,3 +22,8 @@ can we create a nested componet or its use good or not ( we can create this but 
 
 
 
+
+
+<!-- what is the three phase of event propgration -->
+
+
