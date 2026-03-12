@@ -300,8 +300,7 @@ function findMissing(arr, n) {
 
 // merge two sorted array
 
-
-  function mergeSorted(arr, arr2) {
+function mergeSorted(arr, arr2) {
   let ans = [];
   let n = arr.length;
   let m = arr2.length;
@@ -331,9 +330,7 @@ function findMissing(arr, n) {
   return ans;
 }
 
-
 // console.log(mergeSorted([1, 9, 4, 7], [4, 5, 6, 7, 8, 9]));
-
 
 // function anagram(s,t){
 //   let arr = s.split('');
@@ -345,38 +342,30 @@ function findMissing(arr, n) {
 //   }
 // }
 
+const anagram = (s, t) => {
+  if (s.length != t.length) return false;
 
+  let obj1 = {};
+  let obj2 = {};
 
+  for (let i = 0; i < s.length; i++) {
+    obj1[s[i]] = (obj1[s[i]] || 0) + 1;
+    obj2[t[i]] = (obj2[t[i]] || 0) + 1;
+  }
 
-const anagram =(s,t)=>{
-if(s.length!=t.length) return false 
-
-let obj1 ={};
-let obj2 ={};
-
-for(let i =0;i<s.length;i++){
-  obj1[s[i]] = (obj1[s[i]] ||0)+1;
-  obj2[t[i]] = (obj2[t[i]]||0)+1; 
-}
-
-for(let key in obj1){
-  if (obj1[key] != obj2[key] )return false;
-}
-return true
-
-
-
-}
+  for (let key in obj1) {
+    if (obj1[key] != obj2[key]) return false;
+  }
+  return true;
+};
 // console.log(anagram('anagram','nagaram'));
-
-
 
 // const twoSumTarget=(nums,target)=>{
 
 //   let set = new Set(nums);
 // for(let i =0;i<nums.length;i++){
 //   let expect = target-nums[i];
-//   if(expect==nums[i]) continue; 
+//   if(expect==nums[i]) continue;
 //   if(set.has(expect)) return [i,nums.indexOf(expect)];
 // }
 // }
@@ -391,17 +380,14 @@ return true
 
 // setTimeout(user.logname.call(user),1000)
 
+// flatten array
 
-
-
-// flatten array 
-
-let flattenArray = [1,2,[3,6,4,[34,35,23,64]],45,[345,73]]
+let flattenArray = [1, 2, [3, 6, 4, [34, 35, 23, 64]], 45, [345, 73]];
 // let newarr = [];
 
 // let ansFlattenArray = flattenArray.map((val)=>{
 //   if(Array.isArray(val)){
-   
+
 //   for(let i =0;i<val.length;i++){
 //      newarr.push(val[i]);
 //   }
@@ -414,49 +400,88 @@ let flattenArray = [1,2,[3,6,4,[34,35,23,64]],45,[345,73]]
 
 // console.log(ansFlattenArray);
 
+// custome flatten array
 
-
-// custome flatten array 
-
-function customeFlattenArray(arr,defth=1){
-  let result =[];
-  arr.forEach(val => {
-    if(Array.isArray(val) && defth>0){
-return result.push(...customeFlattenArray(val,defth-1));
-    }else{
+function customeFlattenArray(arr, defth = 1) {
+  let result = [];
+  arr.forEach((val) => {
+    if (Array.isArray(val) && defth > 0) {
+      return result.push(...customeFlattenArray(val, defth - 1));
+    } else {
       result.push(val);
     }
   });
-  return result
+  return result;
 }
 
 // console.log(customeFlattenArray(flattenArray,2))
 
-
-function foo(){
-  for(var i=0;i<3;i++ ){
-    setTimeout(function(){
+function foo() {
+  for (var i = 0; i < 3; i++) {
+    setTimeout(function () {
       console.log(i);
-    },i*1000);
+    }, i * 1000);
   }
 }
 // foo()
 
-
-const obj ={
-  name:'lokesh',
-  sayHello:function(thing){
-console.log(this.name+'is the ' +  thing);
-  }
-}
+const obj = {
+  name: "lokesh",
+  sayHello: function (thing) {
+    console.log(this.name + "is the " + thing);
+  },
+};
 
 const obj2 = {
-  name:'dangwal Lokesh'
-}
-
+  name: "dangwal Lokesh",
+};
 
 // const result = obj.sayHello.bind(obj2)
 // result('good man')
 
+const products = [
+  { name: "iPhone", category: "electronics" },
+  { name: "Samsung TV", category: "electronics" },
+  { name: "Nike Shoes", category: "fashion" },
+  { name: "T-shirt", category: "fashion" },
+  { name: "Apple Watch", category: "electronics" },
+];
+let ele = [];
+let fash = [];
+for (let i = 0; i < products.length; i++) {
+  if (products[i].category == "electronics") {
+    ele.push(products[i].name);
+  } else {
+    fash.push(products[i].name);
+  }
+}
 
+// console.log(ele);
+// console.log(fash);
+
+function longestString(str) {
+  let longest = 0;
+  let set = new Set();
+  for (let i = 0; i < str.length; i++) {
+    let max = 0;
+    if (set.has(str[i])) {
+      if (max > longest) {
+        longest = max;
+        max = 0;
+      }
+    } else {
+      max++;
+      set.add(str[i]);
+    }
+  }
+  console.log(set.size);
+}
+// longestString("lokesh");
+
+
+function anagramCheck(arr){
+
+}
+
+anagramCheck(["eat","tea","tan","ate","nat","bat"]);
 
