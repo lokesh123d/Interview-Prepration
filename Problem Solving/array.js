@@ -1,4 +1,3 @@
-const { use } = require("react");
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let arr2 = [2, 3, 3, 4, 5, 68, 9, 2, 4, 8, 5];
@@ -483,5 +482,41 @@ function anagramCheck(arr){
 
 }
 
-anagramCheck(["eat","tea","tan","ate","nat","bat"]);
+// anagramCheck(["eat","tea","tan","ate","nat","bat"]);
+
+
+
+function duplicateRemove(arr){
+  for(let i =0;i<arr.length;i++){
+    for(let j  =i+1;j<arr.length;j++){
+     if(arr[i]==arr[j]){
+      arr.splice(j,1);
+     }
+    }
+  }
+  console.log(arr);
+}
+
+// duplicateRemove([1,2,3,1,2,4,5]);
+
+
+function duplicateFindAndRemove(arr){
+let obj = {};
+let result = [];
+for(let i = 0 ;i<arr.length;i++){
+  if(!obj[arr[i]]){
+    obj[arr[i]] = true;
+    result.push(arr[i]);
+  }
+}
+console.log(result);
+
+
+}
+
+// duplicateFindAndRemove([1,2,3,1,23,3,4,5,7]);
+
+
+
+
 

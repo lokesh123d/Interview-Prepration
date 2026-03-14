@@ -30,20 +30,45 @@
 
 // export default App
 
-import React from 'react'
-import CompA from './component/CompA'
-import CompB from './component/CompB'
+// import React from 'react'
+// import CompA from './component/CompA'
+// import CompB from './component/CompB'
 
-const App = () => {
+// const App = () => {
 
-  return (
-    <div>App
+//   return (
+//     <div>App
 
 
-      <CompA/>
-      <CompB/>
-    </div>
-  )
+//       <CompA/>
+//       <CompB/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, { useState } from "react";
+
+function Child() {
+  console.log("Child Render");
+  return <h1>Child</h1>;
 }
 
-export default App
+function App() {
+  const [count, setCount] = useState(0);
+
+  console.log("App Render");
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>
+        Click {count}
+      </button>
+      <Child />
+    </div>
+  );
+}
+
+export default App;
