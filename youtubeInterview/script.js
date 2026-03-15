@@ -145,3 +145,55 @@
 
 // console.log(isNaN ('lokesh'))
 
+
+// console.log('start');
+
+// setTimeout(function (){
+//     console.log('time')
+// },0)
+
+// for(let i =1;i<10;i++){
+//     console.log('block thread')
+// }
+
+// console.log('end')
+
+const retries = 3;
+const delay = 2000;
+
+function dataFetch() {
+  return new Promise((resolve, reject) => {
+    const responseData = {
+      name: "lokesh",
+      passion: "web developer"
+    };
+
+    const statusCode = 300
+
+    if (statusCode === 200) {
+      resolve(responseData);
+    } else {
+      reject("Something went wrong");
+    }
+  });
+}
+
+function retry(callbackFunc, retries, delay) {
+  callbackFunc()
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((err) => {
+      if (retries > 0) {
+        console.log(`Retrying... attempts left: ${retries}`);
+
+        setTimeout(() => {
+          retry(callbackFunc, retries - 1, delay);
+        }, delay);
+      } else {
+        console.log("Failed after retries:", err);
+      }
+    });
+}
+
+retry(dataFetch, retries, delay);
