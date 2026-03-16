@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './infinite.css'
 
 const InfiniteScroll = () => {
 
@@ -12,17 +13,31 @@ useEffect(()=>{
         return res.json();
     })
     .then((res)=>{
-        console.log(data);
+        console.log(res);
         setData([...data,...res]);
     })
 },[page])
 
 
+
+window.addEventListener('scroll',function(){
+    if(this.innerHeight+this.window.scrollY>this.document.documentElement.scrollHeight-1){
+setPage(page+1);
+    }
+})
+
+
+
     return (
-    <div>
-        <button
-        onClick={()=>setPage(prev=>prev+1)}
-        >page increase</button>
+    <div className='container'>
+     
+
+
+        {data.map((items)=>{
+            return (<div className='card' key={items.key+items.title[0]+Math.random()*200}>
+{items.title}
+            </div>)
+        })}
     </div>
   )
 }
