@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Tabs = () => {
+const Tabs = ({val}) => {
   return (
-    <div>Tabs</div>
+    <div>{val.content}</div>
   )
 }
 
