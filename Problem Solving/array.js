@@ -1,4 +1,3 @@
-
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let arr2 = [2, 3, 3, 4, 5, 68, 9, 2, 4, 8, 5];
 let ducharr = [1, 2, , 0, 0, 0, 2, 2, 1, 2];
@@ -477,21 +476,16 @@ function longestString(str) {
 }
 // longestString("lokesh");
 
-
-function anagramCheck(arr){
-
-}
+function anagramCheck(arr) {}
 
 // anagramCheck(["eat","tea","tan","ate","nat","bat"]);
 
-
-
-function duplicateRemove(arr){
-  for(let i =0;i<arr.length;i++){
-    for(let j  =i+1;j<arr.length;j++){
-     if(arr[i]==arr[j]){
-      arr.splice(j,1);
-     }
+function duplicateRemove(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        arr.splice(j, 1);
+      }
     }
   }
   console.log(arr);
@@ -499,24 +493,139 @@ function duplicateRemove(arr){
 
 // duplicateRemove([1,2,3,1,2,4,5]);
 
-
-function duplicateFindAndRemove(arr){
-let obj = {};
-let result = [];
-for(let i = 0 ;i<arr.length;i++){
-  if(!obj[arr[i]]){
-    obj[arr[i]] = true;
-    result.push(arr[i]);
+function duplicateFindAndRemove(arr) {
+  let obj = {};
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!obj[arr[i]]) {
+      obj[arr[i]] = true;
+      result.push(arr[i]);
+    }
   }
-}
-console.log(result);
-
-
+  console.log(result);
 }
 
 // duplicateFindAndRemove([1,2,3,1,23,3,4,5,7]);
 
+const users = [
+  { name: "Arun", role: "Developer" },
+  { name: "Priya", role: "Designer" },
+  { name: "Rahul", role: "Developer" },
+  { name: "Anjali", role: "Manager" },
+  { name: "Karan", role: "Designer" },
+];
 
+// Expected Output :
 
+// {
+//   Developer: ["Arun", "Rahul"],
+//   Designer: ["Karan", "Priya"],
+//   Manager: ["Anjali"]
+// }
 
+function accGivenCondition() {
+  let result = {};
 
+  for (let i = 0; i < users.length; i++) {
+    let role = users[i].role;
+    let name = users[i].name;
+
+    if (result[role]) {
+      result[role].push(name);
+    } else {
+      result[role] = [name];
+    }
+  }
+
+  console.log(result);
+}
+
+// accGivenCondition();
+
+const nestedObj = {
+  user: {
+    name: "Arun",
+    address: {
+      city: "Chennai",
+      zip: 600001,
+    },
+  },
+};
+
+let result = {};
+function flattenObj(obj, result) {
+  for (let item in obj) {
+    if (typeof item == "object" && !Array.isArray(item)) {
+      console.log(obj);
+    }
+  }
+}
+// flattenObj(nestedObj,result);
+
+function solvedProblme() {
+  let objf = {
+    name: "lokesh",
+    age: 18,
+  };
+  let results = [];
+  for (let items in objf) {
+    results.push([items, objf[items]]);
+  }
+  console.log(results);
+}
+// solvedProblme()
+
+function findLongestSubStr(str) {
+  let longest = 0;
+  let max = "";
+  let set = new Set();
+  str.split("").map((char) => {
+    if (max.includes(char)) {
+      if (max.length > longest) {
+        set.add(max);
+        console.log("aander");
+        longest = max.length;
+        max = "";
+      }
+      max += char;
+    } else {
+      max += char;
+    }
+  });
+
+  console.log(max);
+  console.log(set);
+}
+// findLongestSubStr('lokesh')
+
+function longestSum(arr) {
+  let longestSum = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    let currentSum = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (currentSum > longestSum) {
+        longestSum = currentSum;
+        currentSum = 0;
+      }
+      currentSum += arr[j];
+    }
+  }
+  console.log(longestSum);
+}
+// longestSum([1,2,3,-4,5,6,-7])
+
+function maxSubArr(arr) {
+  let max = arr[0];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (sum > max) {
+      max = sum;
+    }
+    if (sum < 0) {
+      sum = 0;
+    }
+  }
+  console.log(max);
+}
+// maxSubArr([1,2,3,-4,5,6,-7])
