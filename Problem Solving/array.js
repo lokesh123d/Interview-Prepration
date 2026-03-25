@@ -629,3 +629,365 @@ function maxSubArr(arr) {
   console.log(max);
 }
 // maxSubArr([1,2,3,-4,5,6,-7])
+
+// console.log("Start");
+
+// setTimeout(() => {
+//   console.log("Timeout 1");
+// }, 0);
+
+// Promise.resolve()
+//   .then(() => {
+//     console.log("Promise 1");
+
+//     setTimeout(() => {
+//       console.log("Timeout 2");
+//     }, 0);
+//   })
+//   .then(() => {
+//     console.log("Promise 2");
+//   });
+
+// async function test() {
+//   console.log("Async Start");
+
+//   await Promise.resolve();
+// await Promise.resolve()
+//   console.log("Async After Await");
+// }
+
+// test();
+
+// console.log("End");
+
+// console.log("A");
+
+// setTimeout(() => {
+//   console.log("B");
+// }, 0);
+
+// async function foo() {
+//   console.log("C");
+
+//   await bar();
+
+//   console.log("D");
+// }    // A C H E G F
+
+// async function bar() {
+//   console.log("E");
+
+//   await Promise.resolve();
+
+//   console.log("F");
+// }
+
+// foo();
+
+// Promise.resolve().then(() => {
+//   console.log("G");
+// });
+
+// console.log("H");
+
+// console.log("1");
+
+// setTimeout(() => {
+//   console.log("2");
+// }, 0);
+
+// Promise.resolve()
+//   .then(() => {
+//     console.log("3");
+//     return Promise.resolve();
+//   })
+//   .then(() => {
+//     console.log("4");
+//   });
+
+// async function test() {
+//   console.log("5");
+//   await Promise.resolve();
+
+//   console.log("6");
+
+//   await Promise.resolve();
+
+//   console.log("7");
+// }
+
+// test();
+
+// console.log("8");
+
+// console.log("S");
+
+//   setTimeout(() => {
+//     console.log("T1");
+
+//     Promise.resolve().then(() => {
+//       console.log("P3");
+//     });
+
+//   }, 0);
+
+// Promise.resolve()
+//   .then(() => {
+//     console.log("P1");
+
+//     setTimeout(() => {
+//       console.log("T2");
+//     }, 0);
+//     return Promise.resolve();
+//   })
+//   .then(() => {
+//     console.log("P2");
+//   });
+
+// async function foo() {
+//   console.log("A1");
+
+//   await Promise.resolve();
+
+//   console.log("A2");
+
+//   await Promise.resolve();
+
+//   console.log("A3");
+// }
+
+// foo();
+
+// console.log("E");
+
+// var x = 1;
+
+// function outer() {
+//   console.log("A", x);
+
+//   var x = 2;
+
+//   function inner() {
+//     console.log("B", x);
+
+//     x = 3;
+
+//     return function deep() {
+//       console.log("C", x);
+//     };
+//   }
+
+//   return inner;
+// }
+
+// const fn = outer();
+
+// setTimeout(() => {
+//   console.log("D", x);
+// }, 0);
+
+// Promise.resolve().then(() => {
+//   console.log("E", x);
+// });
+
+// fn()();
+
+// console.log("F", x);
+
+// (function () {
+//   console.log("G", x);
+//   var x = 4;
+
+//   setTimeout(() => {
+//     console.log("H", x);
+//   }, 0);
+// })();
+
+// console.log(a);
+
+// var a = 10;
+
+// function outer() {
+//   console.log(a);
+
+//   var a = 20;
+
+//   function inner() {
+//     console.log(a);
+
+//     setTimeout(() => {
+//       console.log(a);
+//     }, 0);
+
+//     Promise.resolve().then(() => {
+//       console.log(a);
+//     });
+
+//     return function () {
+//       console.log(a);
+//     };
+//   }
+
+//   return inner;
+// }
+
+// const fn = outer();
+
+// fn()();
+
+// console.log(a);
+
+// try {
+//   console .log(b);
+//   let b = 30;
+// } catch (err) {
+//   console.log("Error:", err.message);
+// }
+
+// let n = Symbol('hey');
+// console.log(n);
+
+// console.log(typeof NaN)
+
+// console.log([]==false)
+
+// let str1 = 'lokesh';
+// let str2 = str1;
+
+// str1[0] ='dangwal';
+// str2 = 'name'
+// console.log(str1);
+
+// let hehe = {name:{
+//   firstname:'lokesh'
+// }}
+
+// const copyhehe = structuredClone(hehe)
+// copyhehe.name.firstname = 'chagedlokehs';
+// console.log(copyhehe);
+
+// console.log(a);
+// const a = 38;
+
+// var a = 10;
+// var a = 9;
+// console.log(a);
+
+// function hey(name,age){
+// this.name = name;
+// this.age = age;
+// console.log(this);
+// return {
+//   name:this.name,
+//   age:this.age
+// }
+// }
+// console.log(hey.call('lokesh',18));
+
+// function foo(){
+//   console.log('hey')
+//   return foo;
+// }
+// console.log(foo()())
+
+// const callObj  ={
+//   name:'lokesh'
+// }
+
+// function hey2(){
+
+//   const hey = ()=>{
+//     console.log(this)
+//   }
+//   hey.call({
+//     he34y:'loeksi'
+//   });
+// }
+// hey2.call(callObj)
+
+// const arrhey = [1,3,5,7,82,6,2];
+
+// // const resulthey = arrhey.map((item)=>item>5);
+// // console.log(resulthey)
+
+// const resulthey = arrhey.map((val)=>{
+//   if(val>5){
+//     return val;
+//   }
+// });
+// console.log(resulthey)
+
+// function addSum (a){
+//   return function(b){
+//     return function (c){
+//       console.log( a+b+c);
+//     }
+//   }
+// }
+
+// console.log(addSum(1)(2)(3));
+
+// infinite currying
+
+// function sum(a){
+//   return function(b){
+//   if(b == undefined) return a;
+//   return sum(a+b);
+//   }
+// }
+// console.log(sum(1)(2)(4)());
+
+// function sumTarget (arr, target){
+//   for(let i =0;i<arr.length;i++){
+//     for(let j = i;j<arr.length;j++){
+//       if(arr[i]+arr[j] == target){
+//          return [i,j]
+//       }
+//     }
+//   }
+// }
+// console.log(sumTarget([15,100,35,7,11],18))
+
+// function foo(){
+//   a = 10;
+// }
+// foo();
+// console.log(a);
+
+// function capitalFirstletter(str) {
+//   return str.split(" ").map((word) => {
+//     return word[0].toUpperCase() + word.slice(1);
+//   });
+// }
+// console.log(capitalFirstletter("my name is lokesh dangwal").join(" "));
+
+function missingItem(arr, n) {
+  result = [];
+  let isfind = false;
+  for (let i = 1; i <= n; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] == i) {
+        isfind = true;
+       break;
+      } else {
+        isfind = false;
+      }
+    }
+    if (!isfind) {
+      console.log(i);
+      isfind = false;
+    }
+  }
+}
+
+// missingItem([1, 4,5,2], 5);
+
+// let a = 10;
+// function foo(){
+// console.log(a);
+// var a = 20;
+// console.log(a);
+// }
+// foo();
+
+  

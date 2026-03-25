@@ -9,6 +9,7 @@ function handleClose(e){
   }
 }
 
+
   return (
     <div id='outer'  onClick={(e)=>handleClose(e)} className={`bg-black  h-screen w-full absolute top-0 justify-center items-center ${isVisible?'flex':'hidden'} `}>
         <div className='flex p-5 min-h-50 rounded-md font-bold justify-around items-center flex-col bg-white  w-100 gap-6 text-center' id='form'>
