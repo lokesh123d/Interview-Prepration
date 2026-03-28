@@ -8,13 +8,56 @@
 </head>
 <body>
     <h1>I am the best @lokesh</h1>
-    <dl>
+    <div id="root"></div>
+    <div id="root"></div>
+
+    <!-- <dl>
   <dt>HTML</dt>
   <dd>HyperText Markup Language</dd>
   <dt>CSS</dt>
   <dd>Cascading Style Sheets</dd>
   <dt>JavaScript</dt>
   <dd>A language for web interactivity</dd>
-</dl>
+</dl> -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script>
+
+
+
+
+const parent = React.createElement('div',{id:"parent"},[
+  React.createElement('div',{id:'child'},[
+    React.createElement('h1',{},'hello h1'),
+    React.createElement('h2',{},'hello h2')
+  ]),
+    React.createElement('div',{id:'child'},[
+    React.createElement('h1',{},'hello h1'),
+    React.createElement('h2',{},'hello h2')
+  ]),
+])
+
+
+
+
+
+
+
+
+const heading = React.createElement('h1',{},'Hello From React....');
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(parent);
+
+
+
+
+
+
+</script>
+
+
 </body>
 </html>

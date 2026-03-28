@@ -968,7 +968,7 @@ function missingItem(arr, n) {
     for (let j = 0; j < arr.length; j++) {
       if (arr[j] == i) {
         isfind = true;
-       break;
+        break;
       } else {
         isfind = false;
       }
@@ -990,4 +990,30 @@ function missingItem(arr, n) {
 // }
 // foo();
 
-  
+
+
+
+function computeValue() {
+  let amount = 0;
+  return {
+    lacs: function (newAmount) {
+      amount += newAmount * 100000;
+      return this;
+    },
+    core: function (newAmount) {
+      amount += newAmount * 10000000;
+      return this;
+    },
+    thousand: function (newAmount) {
+      amount += newAmount * 1000;
+      return this;
+    },
+    value: function () {
+      return amount;
+    },
+  };
+}
+
+console.log(
+  computeValue().lacs(15).core(5).core(2).lacs(20).thousand(45).core(7).value(),
+);
