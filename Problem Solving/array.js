@@ -1014,6 +1014,6 @@ function computeValue() {
   };
 }
 
-console.log(
-  computeValue().lacs(15).core(5).core(2).lacs(20).thousand(45).core(7).value(),
-);
+// console.log(
+//   computeValue().lacs(15).core(5).core(2).lacs(20).thousand(45).core(7).value(),
+// );
